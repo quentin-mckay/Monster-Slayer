@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyApp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <div class="container">
+
+      <section id="players">
+        <div class="player">
+          <h2>You</h2>
+          <div class="healthbar-container">
+            <div :style="playerHealthBarStyle" class="healthbar">
+              {{ playerHealth }}
+            </div>
+          </div>
+        </div>
+        <div class="player">
+          <h2>Monster</h2>
+          <div class="healthbar-container">
+            <div :style="monsterHealthBarStyle" class="healthbar">
+              {{ monsterHealth }}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="controls">
+        <template v-if="!isGamePlaying">
+          <button @click="startGame" class="btn">Start New Game</button>
+        </template>
+
+        <template v-else>
+          <button @click="attack" class="btn red">Attack</button>
+          <!-- <button class="btn blue">Special Attack</button> -->
+          <button @click="heal" class="btn green">Heal</button>
+          <button @click="restart" class="btn">Give Up</button>
+        </template>
+      </section>
+
+      <section id="event-log">
+        <!-- hack for numbering the turns. 
+          each turn should probably be an instance of a Turn class 
+          if this was a larger app -->
+        <div class="turn" v-for="(turn, index) in eventLog">
+          <div class="turn-number">Turn {{ eventLog.length - index - 1 }}</div>  
+          <div class="event" v-for="event in turn">{{ event }}</div>
+        </div>
+      </section>
+
+    </div>
+
+
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

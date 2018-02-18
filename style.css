@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+:root {
+  --bg-color: #bdc3c7;
+  --font-color: black;
+  --red: #e74c3c;
+  --blue: #2980b9;
+  --green: #27ae60;
+  --emerald: #2ecc71;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--font-color);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 50px;
+
+}
+
+#players {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 2rem;
+}
+
+#players h2 {
+  font-size: 2rem;
+}
+
+.player {
+  text-align: center;
+}
+
+
+.healthbar-container {
+  display: inline-block;
+  background: #ccc;
+  width: 80%;
+  height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.healthbar {
+  background: var(--emerald);
+  height: 100%;
+  width: 100%;
+
+  transition: 0.4s;
+}
+
+
+
+#controls {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+
+  /* font: normal 16px inherit; */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4)
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.red { background: var(--red); }
+.blue { background: var(--blue); }
+.green { background: var(--green); }
+
+
+
+#event-log {
+  margin-top: 20px;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+
+
+.turn {
+  border: 1px solid rgba(0, 0, 0, 0.219);
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.turn-number {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.329);
+  color: rgb(0, 0, 0);
+  padding: 0 5px;
+  border-radius: 0 5px 5px 0;
+}
+
+
+.event {
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  background: rgb(176, 184, 206);
+  color: rgb(25, 65, 175);
+}
+
+.event:nth-child(odd) {
+  background: rgb(206, 177, 177);
+  color: rgb(133, 36, 36);
+}
+
+.event:not(:first-child) {
+  margin-top: 2px;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+  #controls .btn {
+    font-size: 1rem;
+  }
+}
