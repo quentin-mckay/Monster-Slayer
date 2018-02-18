@@ -49,7 +49,11 @@
           if this was a larger app -->
         <div class="turn" v-for="(turn, index) in eventLog">
           <div class="turn-number">Turn {{ eventLog.length - index - 1 }}</div>  
-          <div class="event" v-for="event in turn">{{ event }}</div>
+          <!-- using wrapping div so i can use css ".event:not(:first-child)"
+          for adding top margins -->
+          <div>
+            <div class="event" v-for="event in turn">{{ event }}</div>
+          </div>
         </div>
       </section>
 
