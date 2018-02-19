@@ -40,6 +40,9 @@ let app = new Vue({
       let playerHealAmount = randomIntBetween(5, 20)
       this.playerHealth += playerHealAmount
       if (this.playerHealth > 100) { this.playerHealth = 100 }
+
+      let turn = { player: `Player heals for ${playerHealAmount}` }
+      this.eventLog.unshift(turn)
     },
     restart: function() {
       this.playerHealth = 100

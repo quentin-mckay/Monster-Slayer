@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Underdog');
 
 :root {
-  --bg-color: #34495e;
+  --bg-color: #2c3e50;
   --font-color: #000000;
-  --app-color: #bdc3c781;
+  --app-color: #7f8c8d;
   --red: #e74c3c;
   --blue: #2980b9;
   --green: #27ae60;
   --healthbar-color: #2ecc71;
 }
 
+/* ===== General Styles ===== */
 * {
   margin: 0;
 }
@@ -17,23 +18,31 @@
 body {
   background: var(--bg-color);
   color: var(--font-color);
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Underdog', sans-serif;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   margin-top: 50px;
 
   background: var(--app-color);
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 1rem;
 }
 
+.btn {
+  font-family: inherit;
+}
+
+
+/* ===== Players Section ===== */
 #players {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-bottom: 2rem;
+  grid-column-gap: 1rem;
+
+  padding-bottom: 1rem;
 }
 
 #players h2 {
@@ -43,6 +52,9 @@ body {
 
 .player {
   text-align: center;
+  /* border: 1px solid #000; */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 0 1rem;
 }
 
 
@@ -51,6 +63,9 @@ body {
   background: #ccc;
   width: 80%;
   height: 20px;
+  border-radius: 2px;
+  
+
   /* border: 1px solid rgba(0, 0, 0, 0.4); */
 }
 
@@ -58,12 +73,13 @@ body {
   background: var(--healthbar-color);
   height: 100%;
   width: 100%;
-
+  border-radius: 2px;
+  
   transition: 0.4s;
 }
 
 
-
+/* ===== Controls Section ===== */
 #controls {
   display: flex;
   justify-content: center;
@@ -77,6 +93,7 @@ body {
   padding: 0.5rem 1rem;
   border: none;
   margin: .5rem;
+  border-radius: 2px;
   /* border: 1px solid rgba(0, 0, 0, 0.4); */
   
   font-size: 1.5rem;
