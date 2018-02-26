@@ -5,8 +5,8 @@
   --section-color: #34374C;
   --section-border-color: rgba(246, 246, 246, 0.192);
   --font-color: #F6F6F6;
-  /* --app-color: #7f8c8d; */
-  --app-bd-color: none;
+  --app-color: #7f8c8d;
+  --app-bd-color: #EE2B47;
   --red: #e74c3c;
   --blue: #2980b9;
   --green: #27ae60;
@@ -26,10 +26,10 @@ body {
 
 .container {
   max-width: 600px;
-  margin: 0 auto;
-  margin-top: 50px;
+  margin: 1rem auto;
 
-  border-radius: 2px;
+  border: 1px solid var(--app-bd-color);
+  border-radius: 5px;
   padding: 1rem;
 }
 
@@ -165,7 +165,14 @@ body {
 
 
 /* ===== Media Queries ===== */
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 600px) {
+  .container {
+    margin: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
   #controls .btn {
     font-size: 1rem;
   }
